@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog | Tomasito</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    body {
+      background: linear-gradient(120deg, #0f2027 0%, #2c5364 100%);
+      color: #e0e6ef;
+      font-family: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .blog-futuristic-container {
+      max-width: 900px;
+      margin: 60px auto 0 auto;
+      background: rgba(20, 30, 48, 0.85);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      padding: 48px 24px 40px 24px;
+      position: relative;
+      overflow: hidden;
+      animation: neon-glow 3s infinite alternate;
+      text-align: center;
+    }
+    @keyframes neon-glow {
+      0% { box-shadow: 0 0 24px #00ffe7, 0 0 48px #00ffe7; }
+      100% { box-shadow: 0 0 48px #00ffe7, 0 0 96px #00ffe7; }
+    }
+    .blog-futuristic-container::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      border: 2px solid transparent;
+      background: linear-gradient(120deg, #00ffe7, #00bfff, #0f2027, #00ffe7) border-box;
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: 1;
+      animation: border-move 6s linear infinite;
+    }
+    @keyframes border-move {
+      0% { filter: hue-rotate(0deg);}
+      100% { filter: hue-rotate(360deg);}
+    }
+    .blog-futuristic-title {
+      font-size: 2.5rem;
+      color: #00ffe7;
+      text-shadow: 0 0 12px #00ffe7, 0 0 2px #fff;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+      animation: flicker 2.5s infinite alternate;
+    }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; text-shadow: 0 0 8px #00ffe7, 0 0 2px #fff;}
+      50% { opacity: 0.85; text-shadow: 0 0 24px #00ffe7, 0 0 8px #fff;}
+    }
+    .blog-futuristic-desc {
+      font-size: 1.2rem;
+      color: #e0e6ef;
+      margin-bottom: 36px;
+      margin-top: 10px;
+      line-height: 1.7;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .blog-languages-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin: 40px 0 0 0;
+    }
+    .blog-language-card {
+      background: rgba(16, 28, 44, 0.95);
+      border-radius: 18px;
+      box-shadow: 0 0 12px #00ffe7;
+      padding: 24px 18px;
+      text-align: left;
+      width: 260px;
+      min-height: 200px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 1.2s;
+    }
+    .blog-language-card:hover {
+      transform: scale(1.07) rotate(-2deg);
+      box-shadow: 0 0 32px #00ffe7;
+    }
+    .blog-language-icon {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+      filter: drop-shadow(0 0 8px #00ffe7);
+      animation: pulse 2s infinite alternate;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1);}
+      100% { transform: scale(1.15);}
+    }
+    .blog-language-title {
+      color: #00ffe7;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    .blog-language-desc {
+      color: #e0e6ef;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0;}
+      100% { opacity: 1;}
+    }
+    @media (max-width: 700px) {
+      .blog-futuristic-container { padding: 24px 6px 24px 6px; }
+      .blog-futuristic-title { font-size: 1.5rem; }
+      .blog-futuristic-desc { font-size: 1rem; }
+      .blog-language-card { width: 100%; min-width: unset; }
+    }
+  </style>
+</head>
+<body>
+<header class="navbar">
+  <a href="index.html" class="logo">To<span>.</span></a>
+  <nav id="nav-menu">
+    <a href="about.html">Sobre mí</a>
+    <a href="projects.html">Proyectos</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main>
+  <section class="blog-futuristic-container">
+    <h1 class="blog-futuristic-title">
+      Blog <span style="font-size:2rem;vertical-align:middle;">📝✨</span>
+    </h1>
+    <div class="blog-futuristic-desc">
+      Bienvenido a mi espacio de aprendizaje y tecnología.<br>
+      Aquí compartiré artículos sobre programación, inteligencia artificial y experiencias en el mundo del desarrollo.<br>
+      Mientras tanto, te presento los lenguajes y tecnologías que manejo:
+    </div>
+    <div class="blog-languages-list">
+      <div class="blog-language-card">
+        <div class="blog-language-icon">💻</div>
+        <div class="blog-language-title">JavaScript</div>
+        <div class="blog-language-desc">
+          El lenguaje de la web. Permite crear sitios interactivos, animaciones y aplicaciones modernas. Lo uso para frontend y backend (Node.js).
+        </div>
+      </div>
+      <div class="blog-language-card">
+        <div class="blog-language-icon">#️⃣</div>
+        <div class="blog-language-title">C#</div>
+        <div class="blog-language-desc">
+          Un lenguaje potente y versátil, ideal para aplicaciones de escritorio, web y videojuegos. Me gusta por su robustez y claridad.
+        </div>
+      </div>
+      <div class="blog-language-card">
+        <div class="blog-language-icon">🌐</div>
+        <div class="blog-language-title">HTML & CSS</div>
+        <div class="blog-language-desc">
+          La base de toda página web. HTML estructura el contenido y CSS le da vida con estilos modernos y responsivos.
+        </div>
+      </div>
+      <div class="blog-language-card">
+        <div class="blog-language-icon">🟩</div>
+        <div class="blog-language-title">Node.js</div>
+        <div class="blog-language-desc">
+          Permite ejecutar JavaScript en el servidor. Ideal para crear APIs, automatizaciones y proyectos rápidos y escalables.
+        </div>
+      </div>
+      <div class="blog-language-card">
+        <div class="blog-language-icon">🗄️</div>
+        <div class="blog-language-title">SQLite</div>
+        <div class="blog-language-desc">
+          Una base de datos ligera y fácil de usar, perfecta para proyectos pequeños y medianos donde la simplicidad es clave.
+        </div>
+      </div>
+      <div class="blog-language-card">
+        <div class="blog-language-icon">🤝</div>
+        <div class="blog-language-title">Git & GitHub</div>
+        <div class="blog-language-desc">
+          Herramientas esenciales para el control de versiones y trabajo colaborativo. Me ayudan a mantener mi código organizado y seguro.
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2025 Claudio
+</footer>
+<script src=

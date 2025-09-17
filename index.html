@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portafolio de desarrollador web – proyectos, habilidades y contacto.">
+  <title>Claudio | Desarrollador Web</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* HERO creativo y futurista */
+    .index-hero-container {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 60px 20px 40px 20px;
+      max-width: 1100px;
+      margin: 40px auto 0 auto;
+      background: rgba(20, 30, 48, 0.92);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      position: relative;
+      overflow: hidden;
+      animation: neon-glow 3s infinite alternate;
+    }
+    @keyframes neon-glow {
+      0% { box-shadow: 0 0 24px #00ffe7, 0 0 48px #00ffe7; }
+      100% { box-shadow: 0 0 48px #00ffe7, 0 0 96px #00ffe7; }
+    }
+    .index-hero-img {
+      width: 220px;
+      border-radius: 50%;
+      box-shadow: 0 0 32px #00ffe7, 0 0 8px #222;
+      object-fit: cover;
+      border: 4px solid #00ffe7;
+      background: #101c2c;
+      transition: transform 0.3s;
+      animation: floatY 3s ease-in-out infinite alternate;
+    }
+    .index-hero-img:hover {
+      transform: scale(1.07) rotate(-3deg);
+      box-shadow: 0 0 64px #00ffe7, 0 0 16px #222;
+    }
+    @keyframes floatY {
+      0% { transform: translateY(0px);}
+      100% { transform: translateY(-18px);}
+    }
+    .index-hero-text {
+      max-width: 600px;
+      animation: slideInRight 1.2s cubic-bezier(.77,0,.18,1) both;
+    }
+    @keyframes slideInRight {
+      0% { opacity: 0; transform: translateX(60px);}
+      100% { opacity: 1; transform: translateX(0);}
+    }
+    .index-hero-text h1 {
+      font-size: 2.7rem;
+      margin-bottom: 18px;
+      color: #00ffe7;
+      text-shadow: 0 0 12px #00ffe7, 0 0 2px #fff;
+      letter-spacing: 1px;
+      animation: flicker 2.5s infinite alternate;
+    }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; text-shadow: 0 0 8px #00ffe7, 0 0 2px #fff;}
+      50% { opacity: 0.85; text-shadow: 0 0 24px #00ffe7, 0 0 8px #fff;}
+    }
+    .index-hero-icons {
+      margin-left: 10px;
+      font-size: 2rem;
+      vertical-align: middle;
+      filter: drop-shadow(0 0 6px #00ffe7);
+      animation: pulse 2s infinite alternate;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1);}
+      100% { transform: scale(1.15);}
+    }
+    .index-hero-text p {
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-size: 1.18rem;
+      color: #e0e6ef;
+    }
+    .index-hero-links {
+      margin-top: 24px;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .index-hero-links a {
+      color: #101c2c;
+      background: linear-gradient(90deg, #00ffe7 0%, #00bfff 100%);
+      padding: 10px 22px;
+      border-radius: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 0 12px #00ffe7;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+      letter-spacing: 1px;
+      font-size: 1.08rem;
+    }
+    .index-hero-links a:hover {
+      background: linear-gradient(90deg, #00bfff 0%, #00ffe7 100%);
+      color: #fff;
+      transform: scale(1.07);
+      box-shadow: 0 0 24px #00ffe7;
+    }
+    .index-hero-container::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      border: 2px solid transparent;
+      background: linear-gradient(120deg, #00ffe7, #00bfff, #0f2027, #00ffe7) border-box;
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: 1;
+      animation: border-move 6s linear infinite;
+    }
+    @keyframes border-move {
+      0% { filter: hue-rotate(0deg);}
+      100% { filter: hue-rotate(360deg);}
+    }
+    /* PROYECTOS destacado */
+    .cta {
+      margin: 60px auto 0 auto;
+      max-width: 700px;
+      background: rgba(20, 30, 48, 0.92);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: neon-glow 3s infinite alternate;
+      border: 2px solid #00ffe7;
+    }
+    .cta h2 {
+      color: #00ffe7;
+      text-shadow: 0 0 8px #00ffe7;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+      animation: flicker 2.5s infinite alternate;
+    }
+    .cta .btn-secondary {
+      color: #101c2c;
+      background: linear-gradient(90deg, #00ffe7 0%, #00bfff 100%);
+      padding: 10px 22px;
+      border-radius: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 0 12px #00ffe7;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+      letter-spacing: 1px;
+      font-size: 1.08rem;
+      border: none;
+      cursor: pointer;
+      margin-top: 18px;
+      display: inline-block;
+    }
+    .cta .btn-secondary:hover {
+      background: linear-gradient(90deg, #00bfff 0%, #00ffe7 100%);
+      color: #fff;
+      transform: scale(1.07);
+      box-shadow: 0 0 24px #00ffe7;
+    }
+    /* Separador decorativo */
+    .section-divider {
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #00ffe7 0%, #00bfff 100%);
+      border-radius: 2px;
+      margin: 40px auto 30px auto;
+      box-shadow: 0 0 16px #00ffe7;
+      opacity: 0.7;
+    }
+    @media (max-width: 900px) {
+      .index-hero-container { flex-direction: column; text-align: center; }
+      .index-hero-img { margin-bottom: 18px; }
+      .index-hero-text { max-width: 100%; }
+      .cta { padding: 24px 8px; }
+    }
+  </style>
+</head>
+<body>
+<header class="navbar">
+  <a href="index.html" class="logo">
+    <img src="assets/img/logo.png" alt="Logo Claudio" class="logo-img">
+  </a>
+  <nav id="nav-menu">
+    <a href="about.html">Sobre mí</a>
+    <a href="projects.html">Proyectos</a>
+    <a href="blog.html">Blog</a>
+    <a href="#contacto">Contacto</a>
+    <button id="dark-toggle" aria-label="Alternar modo oscuro">🌓</button>
+  </nav>
+  <button id="hamburger" aria-label="Menú móvil">☰</button>
+</header>
+
+<main>
+  <!-- HERO creativo y futurista -->
+  <section class="index-hero-container">
+    <div class="about-image">
+      <img src="assets/img/claudiete.png" alt="Claudiete" class="index-hero-img">
+    </div>
+    <div class="index-hero-text">
+      <h1>¡Hola!, soy Claudio <span class="index-hero-icons">👨‍💻🌌</span></h1>
+      <p>
+        <strong>Analista Programador en formación</strong> en el Instituto Santo Tomás.<br>
+        Apasionado por la tecnología, el desarrollo web y la creación de soluciones que hagan la vida más fácil y divertida.<br>
+        Trabajo en Backend, Frontend, JavaScript y Web, aplicando buenas prácticas con Git y GitHub bajo metodologías ágiles como Scrum.<br>
+        Me apasiona construir soluciones simples, eficientes y centradas en el usuario 🚀.
+      </p>
+      <div class="index-hero-links">
+        <a href="assets/TomasitoCV.pdf" download>Descargar CV</a>
+        <a href="#contacto">Contáctame</a>
+        <a href="projects.html">Ver proyectos</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- HABILIDADES -->
+  <section class="skills">
+    <h2 class="skills-title">HABILIDADES</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <img src="assets/img/csharp.png" alt="C#" class="skill-icon">
+        <h3>C#</h3>
+        <p>Conocimientos básicos</p>
+      </div>
+      <div class="skill-card">
+        <img src="assets/img/html.png" alt="HTML5" class="skill-icon">
+        <h3>HTML</h3>
+        <p>Conocimientos básicos</p>
+      </div>
+      <div class="skill-card">
+        <img src="assets/img/css3.png" alt="CSS3" class="skill-icon">
+        <h3>CSS</h3>
+        <p>Conocimientos básicos</p>
+      </div>
+      <div class="skill-card">
+        <img src="assets/img/logoscript.png" alt="JavaScript" class="skill-icon">
+        <h3>JavaScript</h3>
+        <p>Conocimientos básicos</p>
+      </div>
+      <div class="skill-card">
+        <img src="assets/img/nodejs.png" alt="Node.js" class="skill-icon">
+        <h3>Node.js</h3>
+        <p>Conocimientos básicos</p>
+      </div>
+      <div class="skill-card">
+        <img src="assets/img/sqlite.png" alt="SQLite" class="skill-icon">
+        <h3>SQLite</h3>
+        <p>Conocimientos básicos</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- CTA PROYECTOS destacado -->
+  <section class="cta">
+    <h2>🚧 Algunos de mis Proyectos</h2>
+    <p style="color:#e0e6ef; margin-bottom:18px;">
+      Próximamente podrás ver aquí mis proyectos más creativos y tecnológicos.<br>
+      ¡Estoy trabajando en ideas que te sorprenderán!
+    </p>
+    <a href="projects.html" class="btn-secondary">Ver proyectos de Claudio</a>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contact">
+    <h2>📬 ¡Hablemos!</h2>
+    <form action="https://formspree.io/f/movwrgqp" method="POST">
+      <label>Nombre
+        <input type="text" name="nombre" required>
+      </label>
+      <label>Correo electrónico
+        <input type="email" name="correo" required>
+      </label>
+      <label>Mensaje
+        <textarea name="mensaje" rows="4" required></textarea>
+      </label>
+      <button type="submit" class="btn-primary">Enviar</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  © 2025 Claudio · <a href="https://github.com/Tomasito">GitHub</a> · 
+  <a href="https://www.linkedin.com/in/Tomasito">LinkedIn</a>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+<script src=

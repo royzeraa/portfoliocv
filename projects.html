@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proyectos | Tomasito</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    body {
+      background: linear-gradient(120deg, #0f2027 0%, #2c5364 100%);
+      color: #e0e6ef;
+      font-family: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .projects-futuristic-container {
+      max-width: 900px;
+      margin: 60px auto 0 auto;
+      background: rgba(20, 30, 48, 0.85);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      padding: 48px 24px 40px 24px;
+      position: relative;
+      overflow: hidden;
+      animation: neon-glow 3s infinite alternate;
+      text-align: center;
+    }
+    @keyframes neon-glow {
+      0% { box-shadow: 0 0 24px #00ffe7, 0 0 48px #00ffe7; }
+      100% { box-shadow: 0 0 48px #00ffe7, 0 0 96px #00ffe7; }
+    }
+    .projects-futuristic-container::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      border: 2px solid transparent;
+      background: linear-gradient(120deg, #00ffe7, #00bfff, #0f2027, #00ffe7) border-box;
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: 1;
+      animation: border-move 6s linear infinite;
+    }
+    @keyframes border-move {
+      0% { filter: hue-rotate(0deg);}
+      100% { filter: hue-rotate(360deg);}
+    }
+    .projects-futuristic-title {
+      font-size: 2.5rem;
+      color: #00ffe7;
+      text-shadow: 0 0 12px #00ffe7, 0 0 2px #fff;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+      animation: flicker 2.5s infinite alternate;
+    }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; text-shadow: 0 0 8px #00ffe7, 0 0 2px #fff;}
+      50% { opacity: 0.85; text-shadow: 0 0 24px #00ffe7, 0 0 8px #fff;}
+    }
+    .projects-futuristic-icon {
+      font-size: 2.5rem;
+      margin-left: 10px;
+      filter: drop-shadow(0 0 8px #00ffe7);
+      animation: pulse 2s infinite alternate;
+      vertical-align: middle;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1);}
+      100% { transform: scale(1.15);}
+    }
+    .projects-futuristic-desc {
+      font-size: 1.2rem;
+      color: #e0e6ef;
+      margin-bottom: 36px;
+      margin-top: 10px;
+      line-height: 1.7;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .projects-futuristic-placeholder {
+      margin: 40px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      opacity: 0.92;
+      animation: fadeIn 2s;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0;}
+      100% { opacity: 0.92;}
+    }
+    .projects-futuristic-robot {
+      font-size: 4rem;
+      filter: drop-shadow(0 0 16px #00ffe7);
+      animation: floatY 3s ease-in-out infinite alternate;
+    }
+    @keyframes floatY {
+      0% { transform: translateY(0px);}
+      100% { transform: translateY(-18px);}
+    }
+    .projects-futuristic-msg {
+      font-size: 1.2rem;
+      color: #00ffe7;
+      background: rgba(0,255,231,0.07);
+      border-radius: 14px;
+      padding: 16px 24px;
+      box-shadow: 0 0 12px #00ffe7;
+      text-shadow: 0 0 8px #00ffe7;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+    .projects-futuristic-links {
+      margin-top: 24px;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .projects-futuristic-links a {
+      color: #101c2c;
+      background: linear-gradient(90deg, #00ffe7 0%, #00bfff 100%);
+      padding: 10px 22px;
+      border-radius: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 0 12px #00ffe7;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+      letter-spacing: 1px;
+      font-size: 1.08rem;
+    }
+    .projects-futuristic-links a:hover {
+      background: linear-gradient(90deg, #00bfff 0%, #00ffe7 100%);
+      color: #fff;
+      transform: scale(1.07);
+      box-shadow: 0 0 24px #00ffe7;
+    }
+    @media (max-width: 700px) {
+      .projects-futuristic-container { padding: 24px 6px 24px 6px; }
+      .projects-futuristic-title { font-size: 1.5rem; }
+      .projects-futuristic-desc { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<header class="navbar">
+  <a href="index.html" class="logo">To<span>.</span></a>
+  <nav id="nav-menu">
+    <a href="about.html">Sobre mí</a>
+    <a href="projects.html">Proyectos</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main>
+  <section class="projects-futuristic-container">
+    <h1 class="projects-futuristic-title">
+      Proyectos Destacados
+      <span class="projects-futuristic-icon">🤖✨</span>
+    </h1>
+    <div class="projects-futuristic-desc">
+      Aquí pronto verás mis proyectos más creativos y tecnológicos.<br>
+      ¡Estoy trabajando en ideas que te sorprenderán!
+    </div>
+    <div class="projects-futuristic-placeholder">
+      <div class="projects-futuristic-robot">🛠️🤖</div>
+      <div class="projects-futuristic-msg">
+        <b>¡Aún no hay proyectos publicados!</b><br>
+        Pronto compartiré mis creaciones aquí.<br>
+        <span style="font-size:1.5rem;">🚀</span>
+      </div>
+    </div>
+    <div class="projects-futuristic-links">
+      <a href="about.html">Sobre mí</a>
+      <a href="index.html#contacto">Contáctame</a>
+      <a href="https://github.com/Tomasito" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2025 Claudio
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
